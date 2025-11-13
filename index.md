@@ -13,29 +13,29 @@ Featured in this portfolio are multiple lab projects. often times using differen
 This project is a step by step walkthrough of how to create a secure windows instance on AWS and connect to it from any other machine using Remote Desktop.
 
 
- 1.1: Create Amazon EC2 instance using a Windows AMI.
+ 1. Create Amazon EC2 instance using a Windows AMI.
  
- 1.2: Select the instance type and either generate a new pem key pair or use an existing key pair.
+ 2. Select the instance type and either generate a new pem key pair or use an existing key pair.
  
- 1.3: Either create a new firewall security group or create one.
+ 3. Either create a new firewall security group or create one.
  
- 1.4: Ensure RDP traffic is allowed from anywhere, you can change this if you would like to further restrict who can access       this server.
+ 4. Ensure RDP traffic is allowed from anywhere, you can change this if you would like to further restrict who can access       this server.
  
- 1.5: Launch the instance.
+ 5. Launch the instance.
  
- 1.6: When the success banner appears, click the instance link.
+ 6. When the success banner appears, click the instance link.
 
- 1.7: Highlight the checkbox for the windows instance, select the ACTIONS drop-down, under SECURITY select GET WINDOWS      PASSWORD
+ 7. Highlight the checkbox for the windows instance, select the ACTIONS drop-down, under SECURITY select GET WINDOWS      PASSWORD
 
- 1.8: Record IP, username, and password.
+ 8. Record IP, username, and password.
 
- 1.9: Open Remote Desktop on any windows machine that you choose, this can be your host machine too
+ 9. Open Remote Desktop on any windows machine that you choose, this can be your host machine too
 
- 1.10: Copy the public DNS to use as the computer name for remote desktop.
+ 10. Copy the public DNS to use as the computer name for remote desktop.
 
- 1.11: Log into Remote Desktop as Administrator using the credentials mentioned previously.
+ 11. Log into Remote Desktop as Administrator using the credentials mentioned previously.
 
- 1.12: Remote Desktop window will appear.
+ 12. Remote Desktop window will appear.
 
 ### Header 3
 
