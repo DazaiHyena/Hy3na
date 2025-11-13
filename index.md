@@ -15,30 +15,47 @@ This project is a step by step walkthrough of how to create a secure windows ins
 
  1. Create Amazon EC2 instance using a Windows AMI.
 
-    ### Large image
-    ![EC2WINPIC1](images/EC2WINPIC1.png)
+![EC2WINPIC2](images/EC2WINPIC2.png)
  
  3. Select the instance type and either generate a new pem key pair or use an existing key pair.
+    
+![EC2WINPIC3](images/EC2WINPIC3.png)
  
- 4. Either create a new firewall security group or create one.
+ 5. Either add an existing firewall security group or create one.
  
- 5. Ensure RDP traffic is allowed from anywhere, you can change this if you would like to further restrict who can access       this server.
+ 6. Ensure RDP traffic is allowed from anywhere, you can change this if you would like to further restrict who can access       this server.
+
+![EC2WINPIC4](images/EC2WINPIC4.png)
  
- 6. Launch the instance.
+ 7. Launch the instance.
  
- 7. When the success banner appears, click the instance link.
+ 8. When the success banner appears, click the instance link.
 
- 8. Highlight the checkbox for the windows instance, select the ACTIONS drop-down, under SECURITY select GET WINDOWS      PASSWORD
+![EC2WINPIC5](images/EC2WINPIC5.png)
 
- 9. Record IP, username, and password.
+ 9. Highlight the checkbox for the windows instance, select the ACTIONS drop-down, under SECURITY select GET WINDOWS      PASSWORD
 
- 10. Open Remote Desktop on any windows machine that you choose, this can be your host machine too
+![EC2WINPIC6](images/EC2WINPIC6.png)
 
- 11. Copy the public DNS to use as the computer name for remote desktop.
+ 10. Record IP, username, and password.
 
- 12. Log into Remote Desktop as Administrator using the credentials mentioned previously.
+![EC2WINPIC7](images/EC2WINPIC7.png)
 
- 13. Remote Desktop window will appear.
+ 11. Open Remote Desktop on any windows machine that you choose, this can be your host machine too
+
+![EC2WINPIC8](images/EC2WINPIC8.png)
+
+ 12. Copy the public DNS to use as the computer name for remote desktop.
+
+![EC2WINPIC9](images/EC2WINPIC9.png)
+
+ 13. Log into Remote Desktop as Administrator using the credentials mentioned previously.
+
+![EC2WINPIC10](images/EC2WINPIC10.png)
+
+ 14. Remote Desktop window will appear.
+
+![EC2WINPIC11](images/EC2WINPIC11.png)
 
 ## Header 3
 
