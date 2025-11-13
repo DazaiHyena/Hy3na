@@ -70,7 +70,7 @@ This project is a step by step walkthrough of how to create a secure windows ins
 
 
 
-3. Select instance type and key pair
+3. Select instance type and key pair, make sure to download key to host machine if needed
 
 
 
@@ -78,7 +78,14 @@ This project is a step by step walkthrough of how to create a secure windows ins
 
 
 
-5. Launch Instance, open Powershell and input this command ssh -i ~/Downloads/Project2WindowsKey.pem ubuntu@18.234.161.136 replace the file path with the file path to your private key and replace the ip address with the public ip address of your ubuntu server<img width="468" height="63" alt="image" src="https://github.com/user-attachments/assets/c690834b-fcb6-4732-bfa2-da02e9d933e1" />
+5. Launch Instance, open Powershell and input this command ssh -i ~/Downloads/Project2WindowsKey.pem ubuntu@18.234.161.136 replace the file path with the file path to your private key and replace the ip address with the public ip address of your ubuntu server.
+
+
+
+6. This is the result of creating my EFS instance and mounting it to my EC2 instance. I used the command sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-033372b6e38a55b4b.efs.us-east-1.amazonaws.com:/ efs to mount EFS to EC2. I used df -T -h to list the available disk free space in the file system. At the bottom of the list, the EFS instance is shown.
+
+
+
 
 
 ## Header 3
