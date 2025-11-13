@@ -12,14 +12,21 @@ Featured in this portfolio are multiple lab projects. often times using differen
 
 This project is a step by step walkthrough of my AWS Cloud Computing Project. This project shows the reader how to utilize AWS to create an instance running Linux as well as an instance running Windows. The goal is to be able to connect to the Windows instance using another machine on another network utilizing remote desktop.   
 
- Step 1: Creating the Windows instance.
+ Step 1: Creating the Windows instance and connecting to it with remote desktop.
 
- 1.1 : Create Amazon EC2 instance using a Windows AMI.
- 1.2 : Select the instance type and either generate a new pem key pair or use an existing key pair.
+ 1.1: Create Amazon EC2 instance using a Windows AMI.
+ 
+ 1.2: Select the instance type and either generate a new pem key pair or use an existing key pair.
+ 
  1.3: Either create a new firewall security group or create one.
+ 
  1.4: Ensure RDP traffic is allowed from anywhere, you can change this if you would like to further restrict who can access       this server.
+ 
  1.5: Launch the instance.
+ 
  1.6: When the success banner appears, click the instance link.
+
+ 1.7: highlight the checkbox for the windows instance 
 
 ### Header 3
 
