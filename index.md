@@ -86,6 +86,15 @@ This project is a step by step walkthrough of how to create a secure windows ins
 
 
 
+7. I used dd if=/dev/zero of=~/efs/testfile bs=1M count=1024 to run a test file to the efs , and then used ls -lh ~/efs/testfile to verify the test file’s existence.
+
+
+
+
+
+
+
+
 
 
 ## Header 3
