@@ -14,28 +14,31 @@ This project is a step by step walkthrough of how to create a secure windows ins
 
 
  1. Create Amazon EC2 instance using a Windows AMI.
+
+    ### Large image
+    ![EC2WINPIC1](images/EC2WINPIC1.png)
  
- 2. Select the instance type and either generate a new pem key pair or use an existing key pair.
+ 3. Select the instance type and either generate a new pem key pair or use an existing key pair.
  
- 3. Either create a new firewall security group or create one.
+ 4. Either create a new firewall security group or create one.
  
- 4. Ensure RDP traffic is allowed from anywhere, you can change this if you would like to further restrict who can access       this server.
+ 5. Ensure RDP traffic is allowed from anywhere, you can change this if you would like to further restrict who can access       this server.
  
- 5. Launch the instance.
+ 6. Launch the instance.
  
- 6. When the success banner appears, click the instance link.
+ 7. When the success banner appears, click the instance link.
 
- 7. Highlight the checkbox for the windows instance, select the ACTIONS drop-down, under SECURITY select GET WINDOWS      PASSWORD
+ 8. Highlight the checkbox for the windows instance, select the ACTIONS drop-down, under SECURITY select GET WINDOWS      PASSWORD
 
- 8. Record IP, username, and password.
+ 9. Record IP, username, and password.
 
- 9. Open Remote Desktop on any windows machine that you choose, this can be your host machine too
+ 10. Open Remote Desktop on any windows machine that you choose, this can be your host machine too
 
- 10. Copy the public DNS to use as the computer name for remote desktop.
+ 11. Copy the public DNS to use as the computer name for remote desktop.
 
- 11. Log into Remote Desktop as Administrator using the credentials mentioned previously.
+ 12. Log into Remote Desktop as Administrator using the credentials mentioned previously.
 
- 12. Remote Desktop window will appear.
+ 13. Remote Desktop window will appear.
 
 ## Header 3
 
