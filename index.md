@@ -62,31 +62,31 @@ This project is a step by step walkthrough of how to create a secure windows ins
 
 ## Project 2: Creating a Network File System in AWS
 
-1. Open an Amazon EC2 instance
+ 1. Open an Amazon EC2 instance
 
 ![EC2NFSPIC1](images/EC2NFSPIC1.png)
 
-2. Name instance and choose Ubuntu version
+ 2. Name instance and choose Ubuntu version
 
 ![EC2NFSPIC2](images/EC2NFSPIC2.png)
 
-3. Select instance type and key pair, make sure to download key to host machine if needed
+ 3. Select instance type and key pair, make sure to download key to host machine if needed
 
 ![EC2NFSPIC3](images/EC2NFSPIC3.png)
 
-4. Select security group
+ 4. Select security group
 
 ![EC2NFSPIC4](images/EC2NFSPIC4.png)
 
-5. Launch Instance, open Powershell and input this command ssh -i ~/Downloads/Project2WindowsKey.pem ubuntu@18.234.161.136 replace the file path with the file path to your private key and replace the ip address with the public ip address of your ubuntu server.
+ 5. Launch Instance, open Powershell and input this command ssh -i ~/Downloads/Project2WindowsKey.pem ubuntu@18.234.161.136 replace the file path with the file path to your private key and replace the ip address with the public ip address of your ubuntu server.
 
 ![EC2NFSPIC5](images/EC2NFSPIC5.png)
 
-6. This is the result of creating my EFS instance and mounting it to my EC2 instance. I used the command sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-033372b6e38a55b4b.efs.us-east-1.amazonaws.com:/ efs to mount EFS to EC2. I used df -T -h to list the available disk free space in the file system. At the bottom of the list, the EFS instance is shown.
+ 6. This is the result of creating my EFS instance and mounting it to my EC2 instance. I used the command sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-033372b6e38a55b4b.efs.us-east-1.amazonaws.com:/ efs to mount EFS to EC2. I used df -T -h to list the available disk free space in the file system. At the bottom of the list, the EFS instance is shown.
 
 ![EC2NFSPIC6](images/EC2NFSPIC6.png)
 
-7. I used dd if=/dev/zero of=~/efs/testfile bs=1M count=1024 to run a test file to the efs , and then used ls -lh ~/efs/testfile to verify the test file’s existence.
+ 7. I used dd if=/dev/zero of=~/efs/testfile bs=1M count=1024 to run a test file to the efs , and then used ls -lh ~/efs/testfile to verify the test file’s existence.
 
 ![EC2NFSPIC7](images/EC2NFSPIC7.png)
 
