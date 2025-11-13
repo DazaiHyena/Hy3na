@@ -8,6 +8,8 @@ layout: default
 
 Featured in this portfolio are multiple lab projects. often times using different virtual machines or physical servers.
 
+# Cloud Projects
+
 ## Project 1: Using AWS to Connect to a Windows Instance With Remote Desktop 
 
 This project is a step by step walkthrough of how to create a secure windows instance on AWS and connect to it from any other machine using Remote Desktop.
@@ -56,6 +58,28 @@ This project is a step by step walkthrough of how to create a secure windows ins
  14. Remote Desktop window will appear.
 
 ![EC2WINPIC11](images/EC2WINPIC11.png)
+
+
+## Project 2: Creating a Network File System in AWS
+
+1. Open an Amazon EC2 instance
+
+
+
+2. Name instance and choose Ubuntu version
+
+
+
+3. Select instance type and key pair
+
+
+
+4. Select security group
+
+
+
+5. Launch Instance, open Powershell and input this command ssh -i ~/Downloads/Project2WindowsKey.pem ubuntu@18.234.161.136 replace the file path with the file path to your private key and replace the ip address with the public ip address of your ubuntu server<img width="468" height="63" alt="image" src="https://github.com/user-attachments/assets/c690834b-fcb6-4732-bfa2-da02e9d933e1" />
+
 
 ## Header 3
 
