@@ -8,11 +8,10 @@ layout: default
 
 Featured in this portfolio are multiple lab projects. often times using different virtual machines or physical servers.
 
-## AWS Cloud Computing Project 1
+## Project 1: Using AWS to Connect to a Windows Instance With Remote Desktop 
 
-This project is a step by step walkthrough of my AWS Cloud Computing Project. This project shows the reader how to utilize AWS to create an instance running Linux as well as an instance running Windows. The goal is to be able to connect to the Windows instance using another machine on another network utilizing remote desktop.   
+This project is a step by step walkthrough of how to create a secure windows instance on AWS and connect to it from any other machine using Remote Desktop.
 
- Step 1: Creating the Windows instance and connecting to it with remote desktop.
 
  1.1: Create Amazon EC2 instance using a Windows AMI.
  
@@ -26,7 +25,17 @@ This project is a step by step walkthrough of my AWS Cloud Computing Project. Th
  
  1.6: When the success banner appears, click the instance link.
 
- 1.7: highlight the checkbox for the windows instance 
+ 1.7: Highlight the checkbox for the windows instance, select the ACTIONS drop-down, under SECURITY select GET WINDOWS      PASSWORD
+
+ 1.8: Record IP, username, and password.
+
+ 1.9: Open Remote Desktop on any windows machine that you choose, this can be your host machine too
+
+ 1.10: Copy the public DNS to use as the computer name for remote desktop.
+
+ 1.11: Log into Remote Desktop as Administrator using the credentials mentioned previously.
+
+ 1.12: Remote Desktop window will appear.
 
 ### Header 3
 
