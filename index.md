@@ -10,7 +10,7 @@ Featured in this portfolio are multiple lab projects. often times using differen
 
 # Red Hat Linux System Administration
 
-## Project 1: Using RedHat Linux to Configure a Network
+## Project 1: Using RedHat Linux to Configure a Network (Centos)
 
 This project shows a step by step walkthrough of how to configure a network using RedHat Linux. SOME SECURITY PROTOCOLS HAVE BEEN IGNORED FOR THE SAKE OF DEMONSTRATION. 
 
@@ -64,21 +64,21 @@ I had to include two screenshots, I made a mistake with my commands that resulte
 
 Part 3: Servers and Groups for Server 2
 6.	sudo groupadd -g 6000 lnxgrps2
-*creates group*
+(creates group)
 
 7.	sudo useradd -u 5000 -g 6000 userp1s2
-*creates user*
+(creates user)
 
-9.	echo ‘userp1s2:password’ | sudo chpasswd *sets password*
-sudo chage -m 4 -M 30 -W 10 -E $(date -d  “Dec 20 next year” +%Y-%m-%d) userp1s2 *sets aging*
+9.	echo ‘userp1s2:password’ | sudo chpasswd (sets password)
+sudo chage -m 4 -M 30 -W 10 -E $(date -d  “Dec 20 next year” +%Y-%m-%d) userp1s2 (sets aging)
 
 11.	echo ‘userp1s2 ALL=(ALL) NOPASSWD: ALL’ | sudo tee /etc/sudoers.d/userp1s2
 sudo chmod 440 /etc/sudoers.d/userp1s2
-	*adds userp1s2 to sudoers list*
+	(adds userp1s2 to sudoers list)
 
 13. su – userp1s2 *switches from my standard account to userp1s2*
-    users *lists users*
-	   id *further confirms user and group information*
+    users (lists users)
+	id (further confirms user and group information)
     groups 
     date
 
@@ -108,15 +108,15 @@ sudo chmod 440 /etc/sudoers.d/userp1s3
 
 Part Four: Networking Config for Server 2
 
- 19.	sudo ip a
- 	*no matter how many times I tried, it wouldn’t list enp0s7 as a connection 		type,  although later I was able to verify the state as “up”*
+ 19. sudo ip a
+ 	 (no matter how many times I tried, it wouldn’t list enp0s7 as a connection type, although later I was able to verify the state as “up”)
 
- 20. sudo nmcli con add type ethernet con-name enp0s7 ip4 192.168.56.214/24 gw4   	 192.168.56.1
-	 *Configures the IP*
+ 20. sudo nmcli con add type ethernet con-name enp0s7 ip4 192.168.56.214/24 gw4 192.168.56.1
+	 (Configures the IP)
 
  21. sudo nmcli con modify enp0s7 connection.autoconnect yes
-	 *enables autoconnect on boot*
-	 sudo nmcli con up enp0s7 *changes enp0s7 state to up*
+	 (enables autoconnect on boot)
+	 sudo nmcli con up enp0s7 (changes enp0s7 state to up)
 	 date
 
 
@@ -126,11 +126,11 @@ Part Five: Network Config for Server 3
 
  22. sudo ip a
 
- 23. sudo nmcli con add type ethernet con-name enp0s7 ip4 192.168.56.215/24 gw4 		192.168.56.1
+ 23. sudo nmcli con add type ethernet con-name enp0s7 ip4 192.168.56.215/24 gw4 192.168.56.1
 
  24. sudo nmcli con modify enp0s7 connection.autoconnect yes
-	sudo nmcli con up enp0s7 
-	date
+	 sudo nmcli con up enp0s7 
+	 date
 
 
 ![RHLinuxPic6](images/RHLinuxPic6.png)
@@ -138,30 +138,30 @@ Part Five: Network Config for Server 3
 Part Six: Configuring SSH
 
  25. ssh-keygen -t rsa -b 2048
-	 *click enter 3 times*
-	 *creates the ssh key*
+	 (creates the ssh key)
 
  26. ssh-copy-id userp1s3@192.168.56.215
-	 *copies ssh key to server3*
+	 (copies ssh key to server3)
 
  27. ssh userp1s3@192.168.56.215 
-	 *establishes ssh connection from server 2 to server 3*
+	 (establishes ssh connection from server 2 to server 3)
 
- 28. For whatever reason every time I logged into server 3, it asked for a 			 password, but it still worked.
+ 28. (For whatever reason every time I logged into server 3, it asked for a password, but it still worked)
 
 ![RHLinuxPic7](images/RHLinuxPic7.png)
 
  29. sudo vi /etc/ssh/sshd_config
-	 *changed PermitRootLogin to no*
- 30. sudo systemctl restart sshd
-	 *restarts the ssh connection*
+	 (changed PermitRootLogin to no)
 
- 31. ssh root@192.168.56.215
-	 *executed this on server 2, it still allowed me to log in for some reason, 	 perhaps I needed to reboot both servers for the change to take effect*
+ 31. sudo systemctl restart sshd
+	 (restarts the ssh connection)
 
- 32. sudo vi /etc/ssh/sshd_config
+ 32. ssh root@192.168.56.215
+	 (executed this on server 2, it still allowed me to log in for some reason, perhaps I needed to reboot ssh for the change to take  			 effect)
+
+ 33. sudo vi /etc/ssh/sshd_config
 	 sudo systemctl restart sshd
-	 *reversed the change and server2 allowed me to login still*
+	 (reversed the change and server2 allowed me to login still)
 
 
 ![RHLinuxPic8](images/RHLinuxPic8.png)
