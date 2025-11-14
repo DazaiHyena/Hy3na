@@ -8,6 +8,92 @@ layout: default
 
 Featured in this portfolio are multiple lab projects. often times using different virtual machines or physical servers.
 
+# Red Hat Linux System Administration
+
+## Project 1: Using RedHat Linux to Configure a Network
+
+This project shows a step by step walkthrough of how to configure a network using RedHat Linux. SOME SECURITY PROTOCOLS HAVE BEEN IGNORED FOR THE SAKE OF DEMONSTRATION. 
+
+Part One:
+
+1.	sudo groupadd -g 6000 lnxgroup (creates group)
+getent group lnxgroup (verifies lnxgroup)
+
+2.	sudo useradd -u 6000 userp1 (creates userp1)
+id userp1 (verifies userp1)
+
+3.	sudo passwd userp1 (creates password for userp1)
+sudo chage -m 4 -M 30 -W 10 userp1 (minimum and maximum password life)
+sudo chage -E 2026-12-20 userp1 (account expiration)
+sudo chage -l userp1 (lists details)
+
+4.	sudo visudo -f /etc/sudoers.d/userp1 (opens sudoer file)
+user1 ALL=(ALL) NOPASSWD: ALL (paste this in sudoer file)
+su userp1 (switches to userp1)
+sudo whoami (verifies root privileges, should list “root”)
+
+5. sudo users (does not ask for password)
+    sudo groups (does not ask for password)
+    id (displays id, gid, and group info for userp1)
+
+
+
+Part Two:
+
+1.	su userp1 (switches to userp1)
+touch /tmp/file1 (creates file)
+mkdir /tmp/directory1 (creates directory)
+
+2.	sudo useradd -u 5001 -g 6000 userp2 (creates userp2)
+sudo chown userp2:lnxgrp /tmp/file1 (changes ownership of file)
+ls -l /tmp/file1 (verifies ownership)
+
+3.	ls -laht/tmp (lists tmp content)
+
+
+4.	sudo groupadd -g 6001 lnxgroup2 (creates new group)
+sudo chown -R userp2:lnxgroup2 /tmp/directory1 (changes ownership of directory 1 recursively)
+
+5.	ls -laht /tmp (lists tmp contents)
+date (displays date)
+
+I had to include two screenshots, I made a mistake with my commands that resulted in multiple errors, I put a red line where the errors begin and end.
+
+
+
+Part 3: Servers and Groups for Server 2
+6.	sudo groupadd -g 6000 lnxgrps2
+*creates group*
+
+7.	sudo useradd -u 5000 -g 6000 userp1s2
+*creates user*
+
+9.	echo ‘userp1s2:password’ | sudo chpasswd *sets password*
+sudo chage -m 4 -M 30 -W 10 -E $(date -d  “Dec 20 next year” +%Y-%m-%d) userp1s2 *sets aging*
+
+11.	echo ‘userp1s2 ALL=(ALL) NOPASSWD: ALL’ | sudo tee /etc/sudoers.d/userp1s2
+sudo chmod 440 /etc/sudoers.d/userp1s2
+	*adds userp1s2 to sudoers list*
+
+13. su – userp1s2 *switches from my standard account to userp1s2*
+    users *lists users*
+	   id *further confirms user and group information*
+    groups 
+    date
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Cloud Projects
 
 ## Project 1: Using AWS to Connect to a Windows Instance With Remote Desktop 
