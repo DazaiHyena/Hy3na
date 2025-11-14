@@ -260,11 +260,11 @@ This project is a step by step walkthrough of how to create a secure windows ins
 
 1. Scenario
 
-
+![NCCTFPic1](images/NCCTFPic1.png)
 
 2. After downloading the file, I took it to 7 zip to extract the .dd file.
 
-
+![NCCTFPic2](images/NCCTFPic2.png)
 
 3. Open Autopsy
 4. Create new case
@@ -272,21 +272,21 @@ This project is a step by step walkthrough of how to create a secure windows ins
 6. Within the deleted files category, a group of exe files can be viewed, these would technically be your malware executables.
 7. Autopsy doesn't reveal any useful data in the hash or metadata sections. But at least we can recover the deleted exe files.
 
-
+![NCCTFPic3](images/NCCTFPic3.png)
 
 9. Copy file path of the original .dd file.
 
-
+![NCCTFPic4](images/NCCTFPic4.png)
 
 10. Run .\strings.exe followed by the file path and observe output.
 
-
+![NCCTFPic5](images/NCCTFPic5.png)
 
 11. Observe TEAM EXE strings similar to the findings in Autopsy.
 
-
+![NCCTFPic6](images/NCCTFPic6.png)
 
 12. Observe IP addresses noted next to each Team name. I was assigned to Team 1 so this is my flag. 
 
-
+![NCCTFPic7](images/NCCTFPic7.png)
 
