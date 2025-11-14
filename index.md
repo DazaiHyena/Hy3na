@@ -38,7 +38,7 @@ sudo whoami (verifies root privileges, should list “root”)
 
 ![RHLinuxPic1](images/RHLinuxPic1.png)
 
-Part Two: Users and Groups for Server 2
+Part Two: Files and Permissions for the Servers
 
 1.	su userp1 (switches to userp1)
 touch /tmp/file1 (creates file)
