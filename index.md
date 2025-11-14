@@ -253,3 +253,40 @@ This project is a step by step walkthrough of how to create a secure windows ins
 
 ![EC2NFSPIC7](images/EC2NFSPIC7.png)
 
+
+# CTF Challenges
+
+## Project 1: Malware IP CTF
+
+1. Scenario
+
+
+
+2. After downloading the file, I took it to 7 zip to extract the .dd file.
+
+
+
+3. Open Autopsy
+4. Create new case
+5. Add the .dd file as the image source
+6. Within the deleted files category, a group of exe files can be viewed, these would technically be your malware executables.
+7. Autopsy doesn't reveal any useful data in the hash or metadata sections. But at least we can recover the deleted exe files.
+
+
+
+9. Copy file path of the original .dd file.
+
+
+
+10. Run .\strings.exe followed by the file path and observe output.
+
+
+
+11. Observe TEAM EXE strings similar to the findings in Autopsy.
+
+
+
+12. Observe IP addresses noted next to each Team name. I was assigned to Team 1 so this is my flag. 
+
+
+
