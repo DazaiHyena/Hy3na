@@ -14,7 +14,7 @@ Featured in this portfolio are multiple lab projects. often times using differen
 
 This project shows a step by step walkthrough of how to configure a network using RedHat Linux. SOME SECURITY PROTOCOLS HAVE BEEN IGNORED FOR THE SAKE OF DEMONSTRATION. 
 
-Part One:
+Part One: Users and Groups for Server 1
 
 1.	sudo groupadd -g 6000 lnxgroup (creates group)
 getent group lnxgroup (verifies lnxgroup)
@@ -38,7 +38,7 @@ sudo whoami (verifies root privileges, should list “root”)
 
 ![RHLinuxPic1](images/RHLinuxPic1.png)
 
-Part Two:
+Part Two: Users and Groups for Server 2
 
 1.	su userp1 (switches to userp1)
 touch /tmp/file1 (creates file)
