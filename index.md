@@ -36,7 +36,7 @@ sudo whoami (verifies root privileges, should list “root”)
     sudo groups (does not ask for password)
     id (displays id, gid, and group info for userp1)
 
-
+![RHLinuxPic1](images/RHLinuxPic1.png)
 
 Part Two:
 
@@ -59,7 +59,8 @@ date (displays date)
 
 I had to include two screenshots, I made a mistake with my commands that resulted in multiple errors, I put a red line where the errors begin and end.
 
-
+![RHLinuxPic2](images/RHLinuxPic2.png)
+![RHLinuxPic2.5](images/RHLinuxPic2.5.png)
 
 Part 3: Servers and Groups for Server 2
 6.	sudo groupadd -g 6000 lnxgrps2
@@ -80,6 +81,104 @@ sudo chmod 440 /etc/sudoers.d/userp1s2
 	   id *further confirms user and group information*
     groups 
     date
+
+
+![RHLinuxPic3](images/RHLinuxPic3.png)
+
+
+Part Three: Users and Groups for Server 3
+
+14.	sudo groupadd -g 6000 lnxgrps 3
+
+15.	sudo useradd -u 5000 -g 6000 userp1s3 
+
+16.	echo ‘userp1s3:password’ | sudo chpasswd
+sudo chage -m 4 -M 30 -W 10 -E $(date -d “Dec 20 next year” +%Y-%m-%d) userp1s3 
+
+17.	echo 'userp1s3 ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/userp1s3
+sudo chmod 440 /etc/sudoers.d/userp1s3
+
+18. su - userp1s3
+    users
+	id
+	groups
+    date
+
+![RHLinuxPic4](images/RHLinuxPic4.png)
+
+Part Four: Networking Config for Server 2
+
+ 19.	sudo ip a
+ 	*no matter how many times I tried, it wouldn’t list enp0s7 as a connection 		type,  although later I was able to verify the state as “up”*
+
+ 20. sudo nmcli con add type ethernet con-name enp0s7 ip4 192.168.56.214/24 gw4   	 192.168.56.1
+	 *Configures the IP*
+
+ 21. sudo nmcli con modify enp0s7 connection.autoconnect yes
+	 *enables autoconnect on boot*
+	 sudo nmcli con up enp0s7 *changes enp0s7 state to up*
+	 date
+
+
+![RHLinuxPic5](images/RHLinuxPic5.png)
+
+Part Five: Network Config for Server 3
+
+ 22. sudo ip a
+
+ 23. sudo nmcli con add type ethernet con-name enp0s7 ip4 192.168.56.215/24 gw4 		192.168.56.1
+
+ 24. sudo nmcli con modify enp0s7 connection.autoconnect yes
+	sudo nmcli con up enp0s7 
+	date
+
+
+![RHLinuxPic6](images/RHLinuxPic6.png)
+
+Part Six: Configuring SSH
+
+ 25. ssh-keygen -t rsa -b 2048
+	 *click enter 3 times*
+	 *creates the ssh key*
+
+ 26. ssh-copy-id userp1s3@192.168.56.215
+	 *copies ssh key to server3*
+
+ 27. ssh userp1s3@192.168.56.215 
+	 *establishes ssh connection from server 2 to server 3*
+
+ 28. For whatever reason every time I logged into server 3, it asked for a 			 password, but it still worked.
+
+![RHLinuxPic7](images/RHLinuxPic7.png)
+
+ 29. sudo vi /etc/ssh/sshd_config
+	 *changed PermitRootLogin to no*
+ 30. sudo systemctl restart sshd
+	 *restarts the ssh connection*
+
+ 31. ssh root@192.168.56.215
+	 *executed this on server 2, it still allowed me to log in for some reason, 	 perhaps I needed to reboot both servers for the change to take effect*
+
+ 32. sudo vi /etc/ssh/sshd_config
+	 sudo systemctl restart sshd
+	 *reversed the change and server2 allowed me to login still*
+
+
+![RHLinuxPic8](images/RHLinuxPic8.png)
+
+*Above is the commands done server 3 below is the commands done on server 2*
+
+![RHLinuxPic9](images/RHLinuxPic9.png)
+
+
+
+
+
+
+
+
+
+
 
 
 
